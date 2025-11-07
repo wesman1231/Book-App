@@ -1,0 +1,87 @@
+/*mobile styling*/
+
+* {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+}
+
+body {
+  background-color: #EFEBCE;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 1em; 
+}
+
+
+#bookshelf-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20%;
+}
+
+#currently-reading-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20%;
+}
+
+#finished-reading-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20%;
+}
+
+.saved-book-div{
+    background-color: #ECC9C6;
+    width: 55%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10%;
+    border-radius: 15px;
+}
+
+.imglink{
+    margin-top: 7px;
+}
+
+.saved-book-div:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px){
+    .saved-book-div{
+        width: 150%;
+        height: 65%;
+    }
+
+    h2{
+        font-size: 1.5em;
+    }
+
+    h3{
+        font-size: 1.5em;
+    }
+
+    select{
+        width: 75%;
+        height: 5vh;
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    p{
+        font-size: 1.5em;
+    }
+}

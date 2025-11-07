@@ -1,0 +1,33 @@
+/* Universal reset for margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in element's total width/height */
+}
+
+/* Reset specific element styles */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, form, fieldset, legend, input, textarea, select, button, table, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+/* Further specific resets */
+img {
+  max-width: 100%; /* Makes images responsive */
+  display: block; /* Removes extra space below images */
+}
+
+ul, ol {
+  list-style: none; /* Removes default bullet points/numbers from lists */
+}
+
+a {
+  text-decoration: none; /* Removes underlines from links */
+  color: inherit; /* Inherits color from parent element */
+}
+
+/* Optional: Set a base font size and line height for consistency */
+body {
+  font-size: 16px; /* Example base font size */
+  line-height: 1.5; /* Accessible line height */
+}

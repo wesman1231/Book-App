@@ -1,0 +1,15 @@
+* {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+}
+
+body{
+    background-color: #EFEBCE;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

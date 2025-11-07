@@ -1,0 +1,179 @@
+/*mobile styling*/
+
+* {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+}
+
+body{
+    background-color: #EFEBCE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+#login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ECC9C6;
+    width: 75%;
+    height: 50%;
+    border: 2px solid;
+    border-radius: 15px;
+    box-shadow: 2px 2px 1px 1px black;
+    row-gap: 15px;
+}
+
+button{
+    position: relative;
+    top: 3.5%;
+    padding: 5px;
+    border-radius: 360px;
+    background-color: #F2BCB1;
+    width: 50%;
+    height: 15%;
+}
+
+dialog{
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button:active{
+    background-color: whitesmoke;
+}
+
+input{
+    position: relative;
+    bottom: 12px;
+}
+
+#loader-container{
+    position: absolute;
+    bottom: 10px;
+}
+
+.loader {
+    visibility: hidden;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite; /* Applying the 'spin' animation */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*tablets*/
+@media screen and (min-width: 768px) {
+    label{
+        font-size: 1.5em;
+    }
+
+    #username{
+        width: 45%;
+        height: 6%;
+        font-size: 1.4em;
+    }
+
+    #password{
+        width: 45%;
+        height: 6%;
+        font-size: 1.4em;
+    }
+
+    button{
+        font-size: 1.2em;
+    }
+}
+
+/*landscape*/
+@media screen and (orientation: landscape){
+    #login{
+        width: 90vw;
+        height: 90vh;
+    }
+
+    #username{
+        width: 40%;
+        height: 8%;
+        font-size: 1em;
+    }
+
+    #password{
+        width: 40%;
+        height: 8%;
+        font-size: 1em;
+    }
+
+    button{
+        transform: translateY(-30%);
+    }
+}
+
+
+/*landscape tablets*/
+@media screen and (min-height: 768px) and (orientation: landscape){
+    #login{
+        width: 90vw;
+        height: 80vh;
+    }
+
+    #username{
+        width: 40%;
+        height: 5%;
+        font-size: 1.2em;
+    }
+
+    #password{
+        width: 40%;
+        height: 5%;
+        font-size: 1.2em;
+    }
+
+    button{
+        transform: translateY(15%);
+        font-size: 1.5em;
+    }
+}
+
+/*desktop*/
+@media screen and (min-width: 1400px) and (orientation: landscape){
+    #login{
+        width: 50%;
+        height: 80vh;
+    }
+
+    #username{
+        width: 30%;
+        height: 4%;
+        font-size: 1.2em;
+    }
+
+    #password{
+        width: 30%;
+        height: 4%;
+        font-size: 1.2em;
+    }
+
+    button{
+        font-size: 1.2em;
+        transform: translateY(65%);
+        width: 20%;
+        height: 10%;
+    }
+}

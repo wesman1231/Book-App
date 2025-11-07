@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Track your TBR list, book progress, and favorite authors all in one place!">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/reset.css">
+        <link rel="stylesheet" href="/css/sign-up.css">
+        <link class="Roboto" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+        <title>Your Reading Corner</title>
+    </head>
+
+    <body>
+        <div id="sign-up">
+                <label for="email">Email: </label>
+                <input id="email" type="email" name="email" required> 
+                <label for="create-username">Username: </label>
+                <input id="create-username" type="text" name="create-username" required> 
+                <label for="create-password">Password: </label>
+                <input id="create-password" type="password" name="create-password" required> 
+                
+                <button id="sign-up-button" type="submit">Sign up</button>
+
+                <dialog id="dup-email">
+                    <p>Email already exists</p>
+                </dialog>
+
+                <dialog id="dup-username">
+                    <p>Username already exists</p>
+                </dialog>
+
+                <dialog id="successful">
+
+                </dialog>
+
+                <div id="loader-container">
+                    <div class="loader"></div>
+                </div>
+            <script src="/scripts/sign-up.js"></script>
+    </body>
+</html>

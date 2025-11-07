@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Track your TBR list, book progress, and favorite authors all in one place!">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/reset.css">
+        <link rel="stylesheet" href="/css/find-new-books.css">
+        <link class="Roboto" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+        <title>Your Reading Corner</title>
+    </head>
+
+    <body>
+        <h1>Find New Books</h1>
+        <label id="search-label" for="book-search">Search for books by title or author</label>
+        <div id="book-search-wrapper"><input id="book-search" type="text" name="book-search"></div>
+        <div id="search-button-wrapper"><button id="search-button" type="button">Search</button></div>
+        <div id="loader-container">
+            <div class="loader"></div>
+        </div>
+        <div id="results-container">
+            <div id="results-wrapper">
+                
+            </div>
+        </div>
+
+        <dialog id="added-book-modal">
+            <p>Added to bookshelf!</p>
+        </dialog>
+        <script src="../scripts/getSearchResult.js"></script>
+    </body>
+</html>
