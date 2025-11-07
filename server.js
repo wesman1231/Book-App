@@ -66,8 +66,6 @@ app.get('/changePassword', (req, res) => {
     res.sendFile(path.join(__dirname, '../html', 'change-password.html'));
 });
 
-
-// Start server
-app.listen(port, () => {
-    console.log(`Server live at https://book-app-production-343e.up.railway.app`);
+app.listen(port, "0.0.0.0", function () {
+  console.log(`Server live at https://book-app-production-343e.up.railway.app`);
 });
