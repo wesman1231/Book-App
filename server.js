@@ -10,7 +10,7 @@ const { xss } = require('express-xss-sanitizer');
 const helmet = require('helmet');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
@@ -69,5 +69,5 @@ app.get('/changePassword', (req, res) => {
 
 // Start server
 app.listen(port, () => {
-    console.log(`Server live at https://yourreadingcorner.com:${port}`);
+    console.log(`Server live at https://book-app-production-343e.up.railway.app`);
 });
