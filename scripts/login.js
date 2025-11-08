@@ -28,11 +28,12 @@ loginButton.addEventListener('click', async () =>{
         }
         if(!response.ok)
         {
-            const wrongInfo = document.getElementById('wrong-info')
-                wrongInfo.show();
-                setTimeout(() => {
-                    wrongInfo.close();
-                }, 3000);
+            const wrongInfo = document.getElementById('wrong-info');
+            wrongInfo.textContent = result.message;
+            wrongInfo.show();
+            setTimeout(() => {
+                wrongInfo.close();
+            }, 3000);
         }
     } catch(error){
         console.error('HTTP error: ', error);
