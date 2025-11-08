@@ -8,7 +8,17 @@ const authRoutes = require('./Backend/routes/authRoutes');
 const bookshelfRoutes = require('./Backend/routes/bookshelfRoutes');
 const requireLogin = require('./Backend/middleware/requireLogin');
 const { xss } = require('express-xss-sanitizer');
-const helmet = require('helmet');
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      useDefaults: true,
+      directives: {
+        "connect-src": ["'self'", "https://openlibrary.org"],
+        "img-src": ["'self'", "data:", "https://images.vexels.com"]
+      },
+    },
+  })
+);
 
 const app = express();   // <-- create app first
 const port = process.env.PORT || 3000;
