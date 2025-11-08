@@ -13,7 +13,7 @@ const { xss } = require('express-xss-sanitizer');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// ✅ Trust proxy for HTTPS behind Railway
+
 app.set('trust proxy', 1);
 
 // Middleware
@@ -35,8 +35,8 @@ app.use(session({
     saveUninitialized: false,
     cookie: {
         httpOnly: true,
-        secure: true,      // HTTPS only
-        sameSite: 'none',  // allows cross-site cookies
+        secure: true,      
+        sameSite: 'none',  
         maxAge: 1000 * 60 * 60 * 24
     }
 }));
