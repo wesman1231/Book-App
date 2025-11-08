@@ -30,8 +30,8 @@ app.use(session({
 }));
 
 // Static files
-app.use('/css', express.static(path.join(__dirname, '../css')));``
-app.use('/scripts', express.static(path.join(__dirname, '../scripts')));
+app.use('/css', express.static(path.join(__dirname, '/css')));``
+app.use('/scripts', express.static(path.join(__dirname, '/scripts')));
 
 // Routes
 app.use('/', authRoutes);
@@ -39,31 +39,31 @@ app.use('/', bookshelfRoutes);
 
 // Page Routes
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../html', 'index.html'));
+    res.sendFile(path.join(__dirname, '/html', 'index.html'));
 });
 app.get('/signup', (req, res) => {
-    res.sendFile(path.join(__dirname, '../html', 'sign-up.html'));
+    res.sendFile(path.join(__dirname, '/html', 'sign-up.html'));
 });
 app.get('/verify', (req, res) => {
-    res.sendFile(path.join(__dirname, '../html', 'verify-email.html'));
+    res.sendFile(path.join(__dirname, '/html', 'verify-email.html'));
 });
 app.get('/home', requireLogin, (req, res) => {
-    res.sendFile(path.join(__dirname, '../html', 'home.html'));
+    res.sendFile(path.join(__dirname, '/html', 'home.html'));
 });
 app.get('/bookshelf', requireLogin, (req, res) => {
-    res.sendFile(path.join(__dirname, '../html', 'your-bookshelf.html'));
+    res.sendFile(path.join(__dirname, '/html', 'your-bookshelf.html'));
 });
 app.get('/your-favorite-authors', requireLogin, (req, res) => {
-    res.sendFile(path.join(__dirname, '../html', 'your-favorite-authors.html'));
+    res.sendFile(path.join(__dirname, '/html', 'your-favorite-authors.html'));
 });
 app.get('/find-new-books', requireLogin, (req, res) => {
-    res.sendFile(path.join(__dirname, '../html', 'find-new-books.html'));
+    res.sendFile(path.join(__dirname, '/html', 'find-new-books.html'));
 });
 app.get('/forgot-password', (req, res) => {
-    res.sendFile(path.join(__dirname, '../html', 'forgot-password.html'));
+    res.sendFile(path.join(__dirname, '/html', 'forgot-password.html'));
 });
 app.get('/changePassword', (req, res) => {
-    res.sendFile(path.join(__dirname, '../html', 'change-password.html'));
+    res.sendFile(path.join(__dirname, '/html', 'change-password.html'));
 });
 
 app.listen(port, "0.0.0.0", function () {
