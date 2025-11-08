@@ -4,23 +4,13 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const cors = require('cors');
+const helmet = require('helmet');
 const authRoutes = require('./Backend/routes/authRoutes');
 const bookshelfRoutes = require('./Backend/routes/bookshelfRoutes');
 const requireLogin = require('./Backend/middleware/requireLogin');
 const { xss } = require('express-xss-sanitizer');
-app.use(
-  helmet({
-    contentSecurityPolicy: {
-      useDefaults: true,
-      directives: {
-        "connect-src": ["'self'", "https://openlibrary.org"],
-        "img-src": ["'self'", "data:", "https://images.vexels.com"]
-      },
-    },
-  })
-);
 
-const app = express();   // <-- create app first
+const app = express();
 const port = process.env.PORT || 3000;
 
 // ✅ Trust proxy for HTTPS behind Railway
@@ -30,7 +20,6 @@ app.set('trust proxy', 1);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(xss());
-app.use(helmet());
 app.use(cookieParser());
 app.use(cors({
   origin: [
@@ -39,16 +28,28 @@ app.use(cors({
   ],
   credentials: true
 }));
+
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
         httpOnly: true,
-        secure: true,
-        sameSite: 'none',
+        secure: true,      // HTTPS only
+        sameSite: 'none',  // allows cross-site cookies
         maxAge: 1000 * 60 * 60 * 24
     }
+}));
+
+// Helmet with CSP
+app.use(helmet({
+  contentSecurityPolicy: {
+    useDefaults: true,
+    directives: {
+      "connect-src": ["'self'", "https://openlibrary.org"],
+      "img-src": ["'self'", "data:", "https://images.vexels.com"]
+    },
+  },
 }));
 
 // Static files
