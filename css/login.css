@@ -76,6 +76,7 @@ dialog{
     transform: translate(-50%, -50%);
     width: 10%;
     height: 5%;
+    font-size: 0.8em;
 }
 
 @keyframes spin {
