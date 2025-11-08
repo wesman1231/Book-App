@@ -47,7 +47,7 @@ app.use(helmet({
     useDefaults: true,
     directives: {
       "connect-src": ["'self'", "https://openlibrary.org"],
-      "img-src": ["'self'", "data:", "https://images.vexels.com"]
+      "img-src": ["'self'", "data:", "https://images.vexels.com", "https://covers.openlibrary.org", "https://static.vecteezy.com"]
     },
   },
 }));
