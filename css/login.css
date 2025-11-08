@@ -69,6 +69,13 @@ input{
     animation: spin 1s linear infinite; /* Applying the 'spin' animation */
 }
 
+#wrong-info{
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
