@@ -69,7 +69,7 @@ input{
     animation: spin 1s linear infinite; /* Applying the 'spin' animation */
 }
 
-#wrong-info{
+dialog{
     position: fixed;
     top: 90%;
     left: 50%;
