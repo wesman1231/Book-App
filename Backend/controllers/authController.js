@@ -1,4 +1,3 @@
-require('dotenv').config();
 const { TransactionalEmailsApi, SendSmtpEmail, CreateContact, ContactsApi } = require('@getbrevo/brevo');
 const db = require('../config/db');
 const bcrypt = require('bcrypt');

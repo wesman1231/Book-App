@@ -1,4 +1,3 @@
-require('dotenv').config();
 const verifyButton = document.getElementById("verifyButton");
 verifyButton.addEventListener('click', async () => {
     try{

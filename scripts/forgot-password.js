@@ -1,4 +1,3 @@
-require('dotenv').config();
 const submitButton = document.getElementById('send-email');
 const loadingWheel = document.querySelector('.loader');
 submitButton.addEventListener('click', async () => {

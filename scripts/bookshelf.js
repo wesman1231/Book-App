@@ -1,4 +1,3 @@
-require('dotenv').config();
 window.onload = async function() {
     const response = await this.fetch(`https://yourreadingcorner.com:${process.env.PORT}/api/bookshelf`)
     try{

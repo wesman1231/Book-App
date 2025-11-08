@@ -1,4 +1,3 @@
-require('dotenv').config();
 const changePasswordButton = document.getElementById('change-password-button');
 const passwordStatus = document.getElementById('password-status');
 changePasswordButton.addEventListener('click', async () => {

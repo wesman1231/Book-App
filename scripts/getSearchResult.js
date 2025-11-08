@@ -1,4 +1,3 @@
-require('dotenv').config();
 //Retrieves the book or author the user searches for
 document.getElementById("search-button").addEventListener("click", async function()
 {

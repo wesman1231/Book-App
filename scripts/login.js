@@ -1,4 +1,3 @@
-require('dotenv').config();
 const loginButton = document.getElementById('login-button');
 const signupButton = document.getElementById('signup-button');
 const forgotPasswordButton = document.getElementById('forgot-password-button');

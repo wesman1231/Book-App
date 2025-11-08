@@ -1,4 +1,3 @@
-require('dotenv').config();
 const signUpButton = document.getElementById('sign-up-button');
 const loadingWheel = document.querySelector('.loader');
 
