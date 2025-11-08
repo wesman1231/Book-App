@@ -12,7 +12,7 @@ signUpButton.addEventListener('click', async () => {
     };
     loadingWheel.style.visibility = 'visible';
     try{
-        const response = await fetch(`https://yourreadingcorner.com:${process.env.PORT}/signup`, {
+        const response = await fetch(`https://yourreadingcorner.com/signup`, {
         method: 'post',
         headers:{
             'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ signUpButton.addEventListener('click', async () => {
             successful.show();
             setTimeout(() => {
                 successful.close();
-                window.location.href = `https://yourreadingcorner.com:${process.env.PORT}/`;
+                window.location.href = `https://yourreadingcorner.com/`;
             }, 2000);
         }
         console.log(result);
