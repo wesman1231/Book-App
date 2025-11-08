@@ -18,7 +18,7 @@ exports.signup = async (req, res) => {
 
         await db.execute('INSERT INTO logininfo (email, username, hashedPassword, verification_token) VALUES (?, ?, ?, ?)', [email, username, hashedPassword, verificationToken]);
         await contactAPI.createContact({email});
-        const verifyUrl = `https://yourreadingcorner.com:${process.env.PORT}/verifyEmail/?token=${verificationToken}`;
+        const verifyUrl = `https://yourreadingcorner.com/verifyEmail/?token=${verificationToken}`;
         let message = new SendSmtpEmail();
         message.subject = "Verify Your Account"; 
         message.sender = {name: "Your Reading Corner", email: "verify.account@yourreadingcorner.com"};
@@ -111,7 +111,7 @@ exports.changePasswordRequest = async (req, res) => {
         }
         else if(rows.length === 1){
             const passwordResetToken = crypto.randomBytes(32).toString('hex');
-            const verifyUrl = `https://yourreadingcorner.com:${process.env.PORT}/changePassword?token=${passwordResetToken}`;
+            const verifyUrl = `https://yourreadingcorner.com/changePassword?token=${passwordResetToken}`;
             await db.execute('UPDATE logininfo SET reset_token = ?, reset_token_expires = DATE_ADD(NOW(), INTERVAL 1 HOUR) WHERE email = ?', [passwordResetToken, email]);
             let message = new SendSmtpEmail();
             message.subject = "Change Password"; 

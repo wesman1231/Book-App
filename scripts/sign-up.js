@@ -67,7 +67,7 @@ document.addEventListener('keydown', async (event) => {
             'username': username,
             'password': password
         };
-        const response = await fetch(`https://yourreadingcorner.com:${process.env.PORT}/signup`, {
+        const response = await fetch(`https://yourreadingcorner.com/signup`, {
             method: 'post',
             headers:{
                 'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ document.addEventListener('keydown', async (event) => {
             }
             else if(response.ok)
             {
-                window.location.href = `https://yourreadingcorner.com:${process.env.PORT}/`;
+                window.location.href = `https://yourreadingcorner.com/`;
             }
             console.log(result);
         } catch(error){

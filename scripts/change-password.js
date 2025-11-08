@@ -12,7 +12,7 @@ changePasswordButton.addEventListener('click', async () => {
     }
 
    try{
-        const response = await fetch(`https://yourreadingcorner.com:${process.env.PORT}/changePassword?token=${token}`, {
+        const response = await fetch(`https://yourreadingcorner.com/changePassword?token=${token}`, {
         method: 'post',
         headers:{
              'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ changePasswordButton.addEventListener('click', async () => {
         passwordStatus.show();
         setTimeout(() => {
                 passwordStatus.close();
-                window.location.href=`https://yourreadingcorner.com:${process.env.PORT}/`
+                window.location.href=`https://yourreadingcorner.com/`
             }, 2000);
         console.log('Password Changed');
    } catch(error){
@@ -45,7 +45,7 @@ document.addEventListener('keydown', async (event) => {
         }
 
         try{
-            const response = await fetch(`https://yourreadingcorner.com:${process.env.PORT}/changePassword?token=${token}`, {
+            const response = await fetch(`https://yourreadingcorner.com/changePassword?token=${token}`, {
             method: 'post',
             headers:{
                 'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ document.addEventListener('keydown', async (event) => {
             passwordStatus.show();
             setTimeout(() => {
                     passwordStatus.close();
-                    window.location.href=`https://yourreadingcorner.com:${process.env.PORT}/`
+                    window.location.href=`https://yourreadingcorner.com/`
                 }, 2000);
             console.log('Password Changed');
         } catch(error){

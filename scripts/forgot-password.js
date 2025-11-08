@@ -5,7 +5,7 @@ submitButton.addEventListener('click', async () => {
     loadingWheel.style.visibility = 'visible';
     
     try{
-        const response = await fetch(`https://yourreadingcorner.com:${process.env.PORT}/changePasswordRequest`, {
+        const response = await fetch(`https://yourreadingcorner.com/changePasswordRequest`, {
             method: 'post',
             headers:{
             'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ document.addEventListener('keydown', async(event) => {
             loadingWheel.style.visibility = 'visible';
             
             try{
-                const response = await fetch(`https://yourreadingcorner.com:${process.env.PORT}/changePasswordRequest`, {
+                const response = await fetch(`https://yourreadingcorner.com/changePasswordRequest`, {
                     method: 'post',
                     headers:{
                     'Content-Type': 'application/json',

@@ -11,7 +11,7 @@ loginButton.addEventListener('click', async () =>{
         'password': password
     };
     loadingWheel.style.visibility = 'visible';
-    const response = await fetch(`https://yourreadingcorner.com:${process.env.PORT}/login`, {
+    const response = await fetch(`https://yourreadingcorner.com/login`, {
         method: 'post',
         headers:{
             'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ loginButton.addEventListener('click', async () =>{
         const result = await response.json();
         if(response.ok)
         {
-            window.location.href = `https://yourreadingcorner.com:${process.env.PORT}/home`;
+            window.location.href = `https://yourreadingcorner.com/home`;
         }
         if(!response.ok)
         {
@@ -52,7 +52,7 @@ document.addEventListener('keydown', async (event) => {
         if(event.key === 'Enter')
         {
             loadingWheel.style.visibility = 'visible';
-            const response = await fetch(`https://yourreadingcorner.com:${process.env.PORT}/login`, {
+            const response = await fetch(`https://yourreadingcorner.com/login`, {
             method: 'post',
             headers:{
                 'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ document.addEventListener('keydown', async (event) => {
         const result = await response.json();
         if(response.ok)
         {
-            window.location.href = `https://yourreadingcorner.com:${process.env.PORT}/home`;
+            window.location.href = `https://yourreadingcorner.com/home`;
         }
         if(!response.ok)
         {
@@ -84,9 +84,9 @@ document.addEventListener('keydown', async (event) => {
 });
 
 signupButton.addEventListener('click', () => {
-    window.location.href = `https://yourreadingcorner.com:${process.env.PORT}/signup`;
+    window.location.href = `https://yourreadingcorner.com/signup`;
 });
 
 forgotPasswordButton.addEventListener('click', () => {
-    window.location.href = `https://yourreadingcorner.com:${process.env.PORT}/forgot-password`;
+    window.location.href = `https://yourreadingcorner.com/forgot-password`;
 });

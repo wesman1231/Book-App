@@ -1,5 +1,5 @@
 window.onload = async function() {
-    const response = await this.fetch(`https://yourreadingcorner.com:${process.env.PORT}/api/bookshelf`)
+    const response = await this.fetch(`https://yourreadingcorner.com/api/bookshelf`)
     try{
         const result = await response.json();
         console.log(result);
