@@ -1,5 +1,6 @@
+require('dotenv').config();
 window.onload = async function() {
-    const response = await this.fetch('https://yourreadingcorner.com:3000/api/bookshelf')
+    const response = await this.fetch(`https://yourreadingcorner.com:${process.env.PORT}/api/bookshelf`)
     try{
         const result = await response.json();
         console.log(result);

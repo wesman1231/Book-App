@@ -1,3 +1,4 @@
+require('dotenv').config();
 const signUpButton = document.getElementById('sign-up-button');
 const loadingWheel = document.querySelector('.loader');
 
@@ -12,7 +13,7 @@ signUpButton.addEventListener('click', async () => {
     };
     loadingWheel.style.visibility = 'visible';
     try{
-        const response = await fetch('https://yourreadingcorner.com:3000/signup', {
+        const response = await fetch(`https://yourreadingcorner.com:${process.env.PORT}/signup`, {
         method: 'post',
         headers:{
             'Content-Type': 'application/json',
@@ -46,7 +47,7 @@ signUpButton.addEventListener('click', async () => {
             successful.show();
             setTimeout(() => {
                 successful.close();
-                window.location.href = 'https://yourreadingcorner.com:3000/';
+                window.location.href = `https://yourreadingcorner.com:${process.env.PORT}/`;
             }, 2000);
         }
         console.log(result);
@@ -67,7 +68,7 @@ document.addEventListener('keydown', async (event) => {
             'username': username,
             'password': password
         };
-        const response = await fetch('https://yourreadingcorner.com:3000/signup', {
+        const response = await fetch(`https://yourreadingcorner.com:${process.env.PORT}/signup`, {
             method: 'post',
             headers:{
                 'Content-Type': 'application/json',
@@ -97,7 +98,7 @@ document.addEventListener('keydown', async (event) => {
             }
             else if(response.ok)
             {
-                window.location.href = 'https://yourreadingcorner.com:3000/';
+                window.location.href = `https://yourreadingcorner.com:${process.env.PORT}/`;
             }
             console.log(result);
         } catch(error){

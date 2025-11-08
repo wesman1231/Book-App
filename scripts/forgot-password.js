@@ -1,3 +1,4 @@
+require('dotenv').config();
 const submitButton = document.getElementById('send-email');
 const loadingWheel = document.querySelector('.loader');
 submitButton.addEventListener('click', async () => {
@@ -5,7 +6,7 @@ submitButton.addEventListener('click', async () => {
     loadingWheel.style.visibility = 'visible';
     
     try{
-        const response = await fetch('https://yourreadingcorner.com:3000/changePasswordRequest', {
+        const response = await fetch(`https://yourreadingcorner.com:${process.env.PORT}/changePasswordRequest`, {
             method: 'post',
             headers:{
             'Content-Type': 'application/json',
@@ -32,7 +33,7 @@ document.addEventListener('keydown', async(event) => {
             loadingWheel.style.visibility = 'visible';
             
             try{
-                const response = await fetch('https://yourreadingcorner.com:3000/changePasswordRequest', {
+                const response = await fetch(`https://yourreadingcorner.com:${process.env.PORT}/changePasswordRequest`, {
                     method: 'post',
                     headers:{
                     'Content-Type': 'application/json',

@@ -1,3 +1,4 @@
+require('dotenv').config();
 //Retrieves the book or author the user searches for
 document.getElementById("search-button").addEventListener("click", async function()
 {
@@ -72,7 +73,7 @@ document.getElementById("search-button").addEventListener("click", async functio
 
                 //add book to bookshelf
                  addToListButton.addEventListener('click', async () => {
-                    const response = await fetch ('https://yourreadingcorner.com:3000/api/bookshelf', {
+                    const response = await fetch (`https://yourreadingcorner.com:${process.env.PORT}/api/bookshelf`, {
                         method: 'post',
                         headers: {
                             'Content-Type': 'application/json'
@@ -180,7 +181,7 @@ document.addEventListener('keydown', async (event) => {
 
                 //add book to bookshelf
                  addToListButton.addEventListener('click', async () => {
-                    const response = await fetch ('https://yourreadingcorner.com:3000/api/bookshelf', {
+                    const response = await fetch (`https://yourreadingcorner.com:${process.env.PORT}/api/bookshelf`, {
                         method: 'post',
                         headers: {
                             'Content-Type': 'application/json'
