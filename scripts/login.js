@@ -17,6 +17,7 @@ loginButton.addEventListener('click', async () =>{
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(loginData),
+        credentials: 'include'
     });
     console.log(JSON.stringify(loginData));
     try{
