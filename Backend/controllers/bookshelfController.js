@@ -44,7 +44,7 @@ exports.getBooks = async (req, res) => {
         const userID = userRows[0].userID;
 
         const [savedBooks] = await db.execute(`
-            SELECT books.title, books.cover_i, books.author, books.year, books.bookKey, books.Status
+            SELECT books.title, books.cover_i, books.author, books.year, books.bookKey
             FROM books
             JOIN userbookshelves ON books.bookKey = userbookshelves.bookKey
             WHERE userbookshelves.userID = ?
