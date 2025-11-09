@@ -59,15 +59,15 @@ window.onload = async function() {
             bookshelfWrapper.append(savedBookDiv);
             if(result[i].Status === "Want to read"){
                 wantToReadWrapper.appendChild(savedBookDiv); 
-                status.value = wantToRead;
+                status.value = wantToRead.value;
             }
             else if(result[i].Status === "Currently reading"){
                 currentlyReadingWrapper.appendChild(savedBookDiv);
-                status.value = currentlyReading;
+                status.value = currentlyReading.value;
             }
             else if(result[i].Status === "Finished reading"){
                 finishedReadingWrapper.appendChild(savedBookDiv);
-                status.value = finishedReading;
+                status.value = finishedReading.value;
             }
 
             status.addEventListener('change', async () => {
