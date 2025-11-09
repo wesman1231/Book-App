@@ -1,11 +1,15 @@
+const wantToReadWrapper = document.getElementById('bookshelf-wrapper');
+const currentlyReadingWrapper = document.getElementById('currently-reading-wrapper')
+const finishedReadingWrapper = document.getElementById('finished-reading-wrapper')
 window.onload = async function() {
-    const response = await this.fetch(`https://yourreadingcorner.com/api/bookshelf`)
+    const response = await fetch(`https://yourreadingcorner.com/api/bookshelf`)
     try{
         const result = await response.json();
         console.log(result);
         for(let i = 0; i < result.length; i++)
         {
             //create elements for each book
+            
             const bookshelfWrapper = document.getElementById('bookshelf-wrapper');
             const savedBookDiv = document.createElement('div');
             savedBookDiv.className = 'saved-book-div';
@@ -53,23 +57,71 @@ window.onload = async function() {
             savedBookDiv.appendChild(author);
             savedBookDiv.appendChild(year);
             bookshelfWrapper.append(savedBookDiv);
+            if(result[i].Status === "Want to read"){
+                wantToReadWrapper.appendChild(savedBookDiv); 
+            }
+            else if(result[i].Status === "Currently reading"){
+                currentlyReadingWrapper.appendChild(savedBookDiv);
+            }
+            else if(result[i].Status === "Finished reading"){
+                finishedReadingWrapper.appendChild(savedBookDiv);
+            }
 
-            status.addEventListener('change', () => {
-                const wantToReadWrapper = this.document.getElementById('bookshelf-wrapper');
-                const currentlyReadingWrapper = document.getElementById('currently-reading-wrapper')
-                const finishedReadingWrapper = document.getElementById('finished-reading-wrapper')
-                
+            status.addEventListener('change', async () => {
                 if(status.value === "want-to-read")
                 {
-                    wantToReadWrapper.appendChild(savedBookDiv);
+                    try{
+                       const response = await fetch(`https://yourreadingcorner.com/api/bookshelf`, {
+                        method: 'put',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            bookKey: result[i].bookKey,
+                            status: 'Want to read'
+                        })
+                       });
+                       wantToReadWrapper.appendChild(savedBookDiv); 
+                    }catch(error){
+                        console.error("Error updating book status: ", error);
+                    }
                 }
                 else if(status.value === 'currently-reading')
                 {
-                    currentlyReadingWrapper.appendChild(savedBookDiv);
+                    try{
+                       const response = await fetch(`https://yourreadingcorner.com/api/bookshelf`, {
+                        method: 'put',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            bookKey: result[i].bookKey,
+                            status: 'Currently reading'
+                        })
+                       });
+                       currentlyReadingWrapper.appendChild(savedBookDiv);
+                    }catch(error){
+                        console.error("Error updating book status: ", error);
+                    }
+                    
                 }
                 else if(status.value === 'finished-reading')
                 {
-                    finishedReadingWrapper.appendChild(savedBookDiv);
+                    try{
+                       const response = await fetch(`https://yourreadingcorner.com/api/bookshelf`, {
+                        method: 'put',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            bookKey: result[i].bookKey,
+                            status: 'Finished reading'
+                        })
+                       });
+                       finishedReadingWrapper.appendChild(savedBookDiv);
+                    }catch(error){
+                        console.error("Error updating book status: ", error);
+                    }
                 }
             });
         }

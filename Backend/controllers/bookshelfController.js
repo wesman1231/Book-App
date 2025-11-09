@@ -58,3 +58,18 @@ exports.getBooks = async (req, res) => {
     }
 };
 
+exports.moveBooks = async (req, res) =>{
+    const {bookKey, status} = req.body;
+    try{
+        const username = req.session.user.username;
+        const [userRows] = await db.execute('SELECT userID FROM logininfo WHERE username = ?', [username]);
+        if (userRows.length === 0) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        const userID = userRows[0].userID;
+        const updateStatus = await db.execute('UPDATE userbookshelves SET Status = ? WHERE userID = ? AND bookKey = ?', [status, userID, bookKey]);
+        res.status(200).json({message: `status updated to ${status}`})
+    } catch(error){
+        res.status(500).json({message: 'Error updating book status'});
+    }
+}
