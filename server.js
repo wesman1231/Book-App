@@ -23,7 +23,6 @@ app.use(xss());
 app.use(cookieParser());
 app.use(cors({
   origin: [
-    'https://yourreadingcorner.com',
     'https://book-app-production-343e.up.railway.app'
   ],
   credentials: true

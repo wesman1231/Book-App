@@ -12,7 +12,7 @@ signUpButton.addEventListener('click', async () => {
     };
     loadingWheel.style.visibility = 'visible';
     try{
-        const response = await fetch(`https://yourreadingcorner.com/signup`, {
+        const response = await fetch(`https://book-app-production-343e.up.railway.app/signup`, {
         method: 'post',
         headers:{
             'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ signUpButton.addEventListener('click', async () => {
             successful.show();
             setTimeout(() => {
                 successful.close();
-                window.location.href = `https://yourreadingcorner.com/`;
+                window.location.href = `https://book-app-production-343e.up.railway.app/`;
             }, 2000);
         }
         console.log(result);
@@ -67,7 +67,7 @@ document.addEventListener('keydown', async (event) => {
             'username': username,
             'password': password
         };
-        const response = await fetch(`https://yourreadingcorner.com/signup`, {
+        const response = await fetch(`https://book-app-production-343e.up.railway.app/signup`, {
             method: 'post',
             headers:{
                 'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ document.addEventListener('keydown', async (event) => {
             }
             else if(response.ok)
             {
-                window.location.href = `https://yourreadingcorner.com/`;
+                window.location.href = `https://book-app-production-343e.up.railway.app/`;
             }
             console.log(result);
         } catch(error){

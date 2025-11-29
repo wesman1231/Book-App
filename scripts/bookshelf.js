@@ -2,7 +2,7 @@ const wantToReadWrapper = document.getElementById('bookshelf-wrapper');
 const currentlyReadingWrapper = document.getElementById('currently-reading-wrapper')
 const finishedReadingWrapper = document.getElementById('finished-reading-wrapper')
 window.onload = async function() {
-    const response = await fetch(`https://yourreadingcorner.com/api/bookshelf`)
+    const response = await fetch(`https://book-app-production-343e.up.railway.app/api/bookshelf`)
     try{
         const result = await response.json();
         console.log(result);
@@ -74,7 +74,7 @@ window.onload = async function() {
                 if(status.value === "want-to-read")
                 {
                     try{
-                       const response = await fetch(`https://yourreadingcorner.com/api/bookshelf`, {
+                       const response = await fetch(`https://book-app-production-343e.up.railway.app/api/bookshelf`, {
                         method: 'put',
                         headers: {
                             'Content-Type': 'application/json'
@@ -92,7 +92,7 @@ window.onload = async function() {
                 else if(status.value === 'currently-reading')
                 {
                     try{
-                       const response = await fetch(`https://yourreadingcorner.com/api/bookshelf`, {
+                       const response = await fetch(`https://book-app-production-343e.up.railway.app/api/bookshelf`, {
                         method: 'put',
                         headers: {
                             'Content-Type': 'application/json'
@@ -111,7 +111,7 @@ window.onload = async function() {
                 else if(status.value === 'finished-reading')
                 {
                     try{
-                       const response = await fetch(`https://yourreadingcorner.com/api/bookshelf`, {
+                       const response = await fetch(`https://book-app-production-343e.up.railway.app/api/bookshelf`, {
                         method: 'put',
                         headers: {
                             'Content-Type': 'application/json'

@@ -1,7 +1,7 @@
 const verifyButton = document.getElementById("verifyButton");
 verifyButton.addEventListener('click', async () => {
     try{
-        const response = await fetch(`https://yourreadingcorner.com/verify`, {
+        const response = await fetch(`https://book-app-production-343e.up.railway.app/verify`, {
             method: post,
             headers: {
                 'Content-Type': 'application/json',
@@ -9,7 +9,7 @@ verifyButton.addEventListener('click', async () => {
             body: JSON.stringify(response)
         });
         if(response.ok){
-            window.location.href = `https://yourreadingcorner.com/`;
+            window.location.href = `https://book-app-production-343e.up.railway.app/`;
         }
     } catch(error){
         console.error('Error verifying email: ', error);

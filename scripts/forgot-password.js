@@ -5,7 +5,7 @@ submitButton.addEventListener('click', async () => {
     loadingWheel.style.visibility = 'visible';
     
     try{
-        const response = await fetch(`https://yourreadingcorner.com/changePasswordRequest`, {
+        const response = await fetch(`https://book-app-production-343e.up.railway.app/changePasswordRequest`, {
             method: 'post',
             headers:{
             'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ document.addEventListener('keydown', async(event) => {
             loadingWheel.style.visibility = 'visible';
             
             try{
-                const response = await fetch(`https://yourreadingcorner.com/changePasswordRequest`, {
+                const response = await fetch(`https://book-app-production-343e.up.railway.app/changePasswordRequest`, {
                     method: 'post',
                     headers:{
                     'Content-Type': 'application/json',

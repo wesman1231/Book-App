@@ -72,7 +72,7 @@ document.getElementById("search-button").addEventListener("click", async functio
 
                 //add book to bookshelf
                  addToListButton.addEventListener('click', async () => {
-                    const response = await fetch (`https://yourreadingcorner.com/api/bookshelf`, {
+                    const response = await fetch (`https://book-app-production-343e.up.railway.app/api/bookshelf`, {
                         method: 'post',
                         headers: {
                             'Content-Type': 'application/json'
@@ -180,7 +180,7 @@ document.addEventListener('keydown', async (event) => {
 
                 //add book to bookshelf
                  addToListButton.addEventListener('click', async () => {
-                    const response = await fetch (`https://yourreadingcorner.com/api/bookshelf`, {
+                    const response = await fetch (`https://book-app-production-343e.up.railway.app/api/bookshelf`, {
                         method: 'post',
                         headers: {
                             'Content-Type': 'application/json'
